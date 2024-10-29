@@ -1,126 +1,111 @@
-/* Общие стили */
+/* Основные стили */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40;
+    background-color: #f4f6f8;
+    color: #2c3e50;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Центровка и ограничения контейнера */
 .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1em;
+    max-width: 700px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 2em;
+    margin: 20px;
 }
 
-/* Стили для заголовка */
 header {
-    background-color: #007bff;
+    background-color: #3498db;
     color: #fff;
+    padding: 1em;
     text-align: center;
-    padding: 1em 0;
-    border-radius: 8px;
-    margin-bottom: 1em;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
 }
 
 h1 {
-    font-size: 1.8em;
     margin: 0;
+    font-size: 1.8em;
 }
 
-/* Основные стили для форм и кнопок */
 main {
-    background-color: #fff;
-    padding: 1em;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+    gap: 1.5em;
 }
 
-.form-group {
+h2 {
+    color: #2980b9;
+    font-size: 1.4em;
+    margin: 0.5em 0;
+}
+
+.form-group, .currency-selector {
     margin-bottom: 1em;
 }
 
-/* Стили для полей ввода и выпадающего списка */
+label {
+    display: block;
+    margin-bottom: 0.3em;
+    color: #34495e;
+}
+
 input, select, button {
     width: 100%;
     padding: 0.75em;
-    margin-top: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ced4da;
+    border-radius: 8px;
+    border: 1px solid #dcdde1;
     font-size: 1em;
 }
 
-/* Стили для кнопок */
 button {
-    background-color: #28a745;
-    color: white;
+    background-color: #1abc9c;
+    color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 1em;
     font-weight: bold;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #16a085;
 }
 
-/* Стили для списков */
-ul {
+.summary {
+    font-weight: bold;
+    color: #34495e;
+    margin-top: 1em;
+}
+
+.list {
     list-style: none;
     padding: 0;
+    margin: 0.5em 0;
 }
 
-li {
-    background-color: #f1f3f5;
-    padding: 0.75em;
-    margin: 0.5em 0;
-    border-radius: 5px;
+.list li {
+    padding: 0.8em;
+    margin-bottom: 0.5em;
+    background-color: #ecf0f1;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Стили для подзаголовков */
-h2 {
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
-    color: #007bff;
-}
-
-.summary {
+.report-content {
+    display: none;
     margin-top: 1em;
-    font-weight: bold;
-    font-size: 1.2em;
+    font-size: 0.9em;
+    color: #7f8c8d;
 }
 
-/* Стили для мобильных устройств */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.5em;
-    }
-    
-    h2 {
-        font-size: 1.2em;
-    }
-    
-    input, select, button {
-        font-size: 0.9em;
-    }
-    
-    .form-group label {
-        font-size: 0.9em;
-    }
-}
-
-/* Стили для выбора валюты */
-.currency-selector {
-    margin-bottom: 1.5em;
-    text-align: center;
-}
-
-/* Улучшение доступности для экранных читалок */
-label, button, input, select {
-    outline: none;
+.report-content.visible {
+    display: block;
 }
