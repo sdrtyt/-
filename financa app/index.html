@@ -3,96 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Финансовое приложение</title>
+    <title>Финансовый помощник</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Базовые стили */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h1 {
-            font-size: 2rem;
-            color: #007bff;
-        }
-        /* Стили для формы */
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        /* Дополнительные стили для списков и итогов */
-        .budget-list, .expense-list, .report {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        .summary {
-            text-align: center;
-        }
-        .notification {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid transparent;
-            border-radius: 5px;
-            text-align: center;
-        }
-        .notification.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border-color: #f5c6cb;
-        }
-        .notification.success {
-            background-color: #d4edda;
-            color: #155724;
-            border-color: #c3e6cb;
-        }
-    </style>
 </head>
 <body>
     <div id="app" class="container">
         <header>
-            <h1>Финансовое приложение</h1>
+            <h1>Финансовый помощник</h1>
         </header>
         <main>
             <section class="currency-selector">
-                <label for="currency">Выберите валюту:</label>
+                <label for="currency">Валюта:</label>
                 <select id="currency">
                     <option value="RUB">₽ - Рубль</option>
                     <option value="USD">$ - Доллар</option>
@@ -111,14 +32,9 @@
                     <label for="budgetAmount">Сумма:</label>
                     <input type="number" id="budgetAmount" placeholder="Введите сумму">
                 </div>
-                <button id="addBudgetBtn">Добавить бюджет</button>
-                <div class="budget-list">
-                    <h3>Ваш бюджет:</h3>
-                    <ul id="budgetItemsList"></ul>
-                </div>
-                <div class="summary">
-                    <h3 id="totalBudget">Итоговый бюджет: 0 ₽</h3>
-                </div>
+                <button id="addBudgetBtn" class="btn">Добавить</button>
+                <ul id="budgetItemsList" class="list"></ul>
+                <h3 id="totalBudget" class="summary">Итоговый бюджет: 0 ₽</h3>
             </section>
             <section class="expenses-analyzer">
                 <h2>Анализ расходов</h2>
@@ -130,21 +46,16 @@
                     <label for="expenseAmount">Сумма:</label>
                     <input type="number" id="expenseAmount" placeholder="Введите сумму">
                 </div>
-                <button id="addExpenseBtn">Добавить расход</button>
-                <div class="expense-list">
-                    <h3>Ваши расходы:</h3>
-                    <ul id="expensesList"></ul>
-                </div>
-                <div class="summary">
-                    <h3 id="totalExpenses">Итоговые расходы: 0 ₽</h3>
-                    <h3 id="remainingBudget">Остаток бюджета: 0 ₽</h3>
-                </div>
+                <button id="addExpenseBtn" class="btn">Добавить</button>
+                <ul id="expensesList" class="list"></ul>
+                <h3 id="totalExpenses" class="summary">Итоговые расходы: 0 ₽</h3>
+                <h3 id="remainingBudget" class="summary">Остаток бюджета: 0 ₽</h3>
             </section>
             <section class="report">
-                <h2>Отчет и Аналитика</h2>
-                <button id="generateReportBtn">Сформировать отчет</button>
-                <div id="reportContent" style="display: none;">
-                    <p>Подробный отчет о бюджете и расходах будет здесь.</p>
+                <h2>Отчет</h2>
+                <button id="generateReportBtn" class="btn">Сформировать отчет</button>
+                <div id="reportContent" class="report-content">
+                    <p>Подробный отчет отобразится здесь.</p>
                 </div>
             </section>
         </main>
